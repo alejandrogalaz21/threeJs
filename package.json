@@ -1,0 +1,48 @@
+{
+  "name": "flex-box",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "start": "parcel index.html --open",
+    "build": "parcel build index.html",
+    "api": "env NODE_ENV=development nodemon --exec babel-node api/server.js --presets=@babel/preset-env",
+    "api-build": "env NODE_ENV=production babel api -d dist-api --presets=@babel/preset-env"
+  },
+  "dependencies": {
+    "app-root-path": "^3.0.0",
+    "chalk": "^4.1.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jquery": "^3.5.1",
+    "js": "^0.1.0",
+    "socket.io": "^2.3.0",
+    "socket.io-client": "^2.3.0",
+    "three": "^0.119.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.10.5",
+    "@babel/core": "7.2.0",
+    "@babel/node": "^7.10.5",
+    "@babel/preset-env": "^7.10.4",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11",
+    "nodemon": "^2.0.4",
+    "parcel-bundler": "^1.6.1",
+    "prettier": "^2.0.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "echo \"<<<--- FORMAT CODE --->>>\" && lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "prettier --write"
+    ],
+    "api/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "prettier --write"
+    ]
+  },
+  "keywords": []
+}

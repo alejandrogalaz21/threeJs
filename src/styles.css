@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+:root {
+  --main-bg-color: #fdfdfd;
+  --bg-white: #ffffff;
+  --bg-purple: #7367f0;
+  --bg-tomato: #ea5455;
+  --bg-blue: #0396ff;
+  --bg-green: #28c76f;
+  --bg-cyand: #32ccbc;
+  --bg-yellow: #f8d800;
+  --cyan-gradient: linear-gradient(135deg, #90f7ec 10%, #32ccbc 100%);
+  --green-gradient: linear-gradient(135deg, #81fbb8 10%, #28c76f 100%);
+  --blue-gradient: linear-gradient(135deg, #6b73ff 10%, #000dff 100%);
+  --pruple-gradient: linear-gradient(135deg, #ce9ffc 10%, #7367f0 100%);
+  --shadow-color: rgba(236, 50, 50, 0.08);
+  --hover-shadow-color: rgba(0, 0, 0, 0.05);
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--main-bg-color);
+}
+
+.box {
+  margin: 25px;
+  width: 200px;
+  line-height: 150px;
+  text-align: center;
+  box-shadow: 0px 0px 51px 0px var(--shadow-color), 0px 6px 18px 0px var(--hover-shadow-color);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(0px);
+}
+
+.bg-cyan-gradient {
+  color: white;
+  font-size: 3em;
+  background-image: var(--cyan-gradient);
+}
+
+.bg-purple-gradient {
+  color: var(--bg-white);
+  font-size: 3em;
+  background-image: var(--pruple-gradient);
+}
+
+.bg-green {
+  color: white;
+  font-size: 3em;
+  background-image: var(--green-gradient);
+}
+
+.box:hover {
+  box-shadow: 0px 0px 114px 0px var(--shadow-color), 0px 30px 25px 0px var(--hover-shadow-color);
+  transform: translateY(-5px);
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
