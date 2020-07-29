@@ -1,6 +1,7 @@
 import $ from 'jquery'
 import io from 'socket.io-client'
 import * as THREE from 'three'
+import Game from './game'
 
 // const socket = io()
 
@@ -8,34 +9,40 @@ import * as THREE from 'three'
 //   console.log(`client connected ${socket.id}`)
 // })
 
-var camera, scene, renderer
-var geometry, material, mesh
+// let camera, scene, renderer
+// let geometry, material, mesh
 
-init()
-animate()
+// init()
+// animate()
 
-function init() {
-  camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 0.01, 10)
-  camera.position.z = 1
+// function init() {
+//   camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 0.01, 10)
+//   camera.position.z = 1
 
-  scene = new THREE.Scene()
+//   scene = new THREE.Scene()
 
-  geometry = new THREE.BoxGeometry(0.2, 0.2, 0.2)
-  material = new THREE.MeshNormalMaterial()
+//   geometry = new THREE.BoxGeometry(0.2, 0.2, 0.2)
+//   material = new THREE.MeshNormalMaterial()
 
-  mesh = new THREE.Mesh(geometry, material)
-  scene.add(mesh)
+//   mesh = new THREE.Mesh(geometry, material)
+//   scene.add(mesh)
 
-  renderer = new THREE.WebGLRenderer({ antialias: true })
-  renderer.setSize(window.innerWidth, window.innerHeight)
-  document.body.appendChild(renderer.domElement)
-}
+//   renderer = new THREE.WebGLRenderer({ antialias: true })
+//   renderer.setSize(window.innerWidth, window.innerHeight)
+//   document.body.appendChild(renderer.domElement)
+// }
 
-function animate() {
-  requestAnimationFrame(animate)
+// function animate() {
+//   requestAnimationFrame(animate)
 
-  mesh.rotation.x += 0.01
-  mesh.rotation.y += 0.02
+//   mesh.rotation.x += 0.01
+//   mesh.rotation.y += 0.02
 
-  renderer.render(scene, camera)
-}
+//   renderer.render(scene, camera)
+// }
+
+document.addEventListener('DOMContentLoaded', function () {
+  const game = new Game()
+  // for debugging only
+  window.game = game
+})
